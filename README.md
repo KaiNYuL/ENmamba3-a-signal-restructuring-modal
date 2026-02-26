@@ -141,3 +141,12 @@ python tests/test_text.py
 * [Albert Gu](https://github.com/albertfgu) and [Tri Dao](https://github.com/tridao) — Authors of the Mamba architecture family.
 * [Tommy Ip](https://github.com/tommyip) — Author of [tommyip/mamba2-minimal](https://github.com/tommyip/mamba2-minimal), which provided the foundational SSD chunking algorithm this repo builds upon.
 * [John Ma](https://github.com/johnma2006) — Author of [johnma2006/mamba-minimal](https://github.com/johnma2006/mamba-minimal), which inspired the minimal, educational approach.
+
+## 🌟 Community Recognition
+
+This is a community-contributed Mamba-3 minimal reference implementation designed to bridge research and practice.
+
+> "Community-contributed Mamba-3-minimal code! This will be a great supplement to the official code..."  
+> — [Albert Gu](https://x.com/_albertgu), Co-author of Mamba-3
+
+**Note:** This repository is intended as a readable, pure-PyTorch reference to understand the core Mamba-3 architecture. For production-scale training and inference, keep an eye out for the official implementation from the state-spaces team.
