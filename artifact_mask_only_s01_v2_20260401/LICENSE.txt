@@ -1,0 +1,17 @@
+Academic Integrity Notice for artifact_mask_only_s01_v2_20260401
+===============================================================
+
+This artifact package is released for research and educational use.
+
+Academic plagiarism is explicitly prohibited, including but not limited to:
+1. Submitting this package (code/results/text/figures) as your own original work.
+2. Removing or altering authorship and attribution information.
+3. Reusing figures/results/tables/text in papers, reports, or theses without citation.
+4. Presenting reproduced/adapted experimental results as independently obtained.
+
+Required attribution:
+- Cite the original repository and authors in any academic reuse.
+- Clearly mark reproduced or adapted content.
+
+This notice is provided to enforce academic integrity expectations for the
+materials in this artifact package.
