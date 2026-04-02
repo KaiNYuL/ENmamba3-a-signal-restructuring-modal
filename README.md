@@ -1,5 +1,36 @@
 
-# mamba3-minimal
+# CNMamba3 Signal Reconstruction
+
+This repository now contains a project-focused artifact for EEG signal reconstruction, built on top of the original `mamba3-minimal` implementation.
+
+## Project Snapshot
+
+- Task: single-subject mask-only EEG signal reconstruction (DEAP)
+- Evaluation set: filtered subjects with non-negative standardized R2
+- Main finding: `mamba_mask_only` consistently outperforms both deep and classic baselines
+
+## Start Here (Latest Docs)
+
+- Full technical report (CN): [artifact_mask_only_s01_v2_20260401/docs/TECHNICAL_REPORT_FULL_ZH.md](artifact_mask_only_s01_v2_20260401/docs/TECHNICAL_REPORT_FULL_ZH.md)
+- Unified baseline summary: [artifact_mask_only_s01_v2_20260401/results/baselines_all/filtered_r2_ge0/all_baselines_summary.md](artifact_mask_only_s01_v2_20260401/results/baselines_all/filtered_r2_ge0/all_baselines_summary.md)
+- Unified baseline table (CSV): [artifact_mask_only_s01_v2_20260401/results/baselines_all/filtered_r2_ge0/all_baselines_comparison_table.csv](artifact_mask_only_s01_v2_20260401/results/baselines_all/filtered_r2_ge0/all_baselines_comparison_table.csv)
+
+## Key Result (Mean Over 28 Filtered Subjects)
+
+| Model | MSE(mean) | MAE(mean) | R2(mean) |
+|---|---:|---:|---:|
+| mamba_mask_only | 28328.754064 | 0.600278 | 0.716563 |
+| tcn_ae (best deep baseline) | 191933.203792 | 3.148998 | 0.444020 |
+| ridge (best classic baseline) | 191918.156656 | 3.732757 | 0.121478 |
+
+## Visual Evidence
+
+- All models comparison: [artifact_mask_only_s01_v2_20260401/results/baselines_all/filtered_r2_ge0/figures/all_models_metric_comparison.png](artifact_mask_only_s01_v2_20260401/results/baselines_all/filtered_r2_ge0/figures/all_models_metric_comparison.png)
+- R2 gap vs Mamba: [artifact_mask_only_s01_v2_20260401/results/baselines_all/filtered_r2_ge0/figures/all_models_r2_gap_vs_mamba.png](artifact_mask_only_s01_v2_20260401/results/baselines_all/filtered_r2_ge0/figures/all_models_r2_gap_vs_mamba.png)
+
+---
+
+# Original mamba3-minimal
 
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&amp;logo=pytorch&amp;logoColor=white)
 ![Mac](https://img.shields.io/badge/Apple_Silicon-MPS_Ready-black?style=for-the-badge&amp;logo=apple)
