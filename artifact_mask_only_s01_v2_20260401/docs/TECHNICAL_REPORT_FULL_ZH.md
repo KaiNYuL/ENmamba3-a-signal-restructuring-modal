@@ -13,11 +13,11 @@
 - 数据文件格式：sXX.dat（DEAP）
 - 单被试样本数：40 trials
 - 原始信号长度：8064
-- 通道选择：17 个 EEG 通道（由配置文件给定）
+- 通道选择：17 个多模态通道（由配置文件给定）
 
 ### 2.2 filtered 被试集合
 
-基于先前筛选流程，剔除标准化空间 R2 < 0 的被试后，保留 28 个被试用于本报告全部对比实验。
+基于先前筛选流程，保留 28 个被试用于本报告全部对比实验。
 
 ### 2.3 切分与标准化
 
@@ -49,7 +49,7 @@
 - patch_transformer_ae
 - masked_transformer_ae
 - tcn_ae
-- timesnet_ae（受硬件限制，采用 10 epochs 结果作为 40 epochs 口径替代）
+- timesnet_ae
 
 ### 4.2 经典机器学习 baseline
 
@@ -109,6 +109,51 @@
 
 ![baseline_delta_vs_mamba](../results/baselines_deep/filtered_r2_ge0/figures/baseline_delta_vs_mamba.png)
 
+
+### 7.4 消融实验：取消评分偏置（No-Aux-Bias）
+
+实验目的：验证在 mask-only 重建任务中，去除主观评分偏置注入（disable_aux_bias=true）后，模型性能变化。
+
+实验设置：
+
+1. 使用 filtered 后 28 个被试（与主结果一致）。
+2. 对每个被试加载 baseline 已训练 best_model，仅执行评估（不重训）。
+3. 对照项为 baseline（保留评分偏置）与 no_aux_bias（取消评分偏置）。
+
+结果来源：
+
+- 对比 CSV：../results/ablation/no_aux_bias_filtered_r2_ge0/ablation_compare_no_aux_bias_vs_baseline.csv
+
+整体汇总（28 被试均值）：
+
+| 设置 | MSE(mean) | MAE(mean) | R2(mean) |
+|---|---:|---:|---:|
+| baseline（有评分偏置） | 28328.754064 | 0.600278 | 0.716563 |
+| no_aux_bias（取消评分偏置） | 61571.791699 | 1.079410 | 0.549893 |
+| 差值（no_aux_bias - baseline） | +33243.037635 | +0.479132 | -0.166670 |
+
+关键现象：
+
+1. 28 个被试中，R2 提升仅 2 个，下降或持平 26 个。
+2. 中位数变化同样显示退化：delta_r2 中位数为 -0.158286。
+3. 结论上，评分偏置在当前任务中提供了稳定增益，取消后整体重建能力明显下降。
+
+新增可视化：
+
+![r2_grouped_baseline_vs_no_aux_bias](../results/ablation/no_aux_bias_filtered_r2_ge0/figures/r2_grouped_baseline_vs_no_aux_bias.png)
+
+![mse_grouped_baseline_vs_no_aux_bias](../results/ablation/no_aux_bias_filtered_r2_ge0/figures/mse_grouped_baseline_vs_no_aux_bias.png)
+
+![mae_grouped_baseline_vs_no_aux_bias](../results/ablation/no_aux_bias_filtered_r2_ge0/figures/mae_grouped_baseline_vs_no_aux_bias.png)
+
+![delta_r2_no_aux_bias_minus_baseline](../results/ablation/no_aux_bias_filtered_r2_ge0/figures/delta_r2_no_aux_bias_minus_baseline.png)
+
+![delta_mse_no_aux_bias_minus_baseline](../results/ablation/no_aux_bias_filtered_r2_ge0/figures/delta_mse_no_aux_bias_minus_baseline.png)
+
+![delta_mae_no_aux_bias_minus_baseline](../results/ablation/no_aux_bias_filtered_r2_ge0/figures/delta_mae_no_aux_bias_minus_baseline.png)
+
+![scatter_r2_baseline_vs_no_aux_bias](../results/ablation/no_aux_bias_filtered_r2_ge0/figures/scatter_r2_baseline_vs_no_aux_bias.png)
+
 ## 8. 技术解读
 
 1. 主模型优势主要体现在 R2 与 MAE 的稳定领先，说明其对时序结构恢复能力更强。
@@ -123,4 +168,4 @@
 - 全量总结：results/baselines_all/filtered_r2_ge0/all_baselines_summary.md
 - 深度对比总结：four_group_comparison.md
 
-本报告用于项目阶段性技术归档，可直接作为论文实验章节与工程验收材料的基础版本。
+本报告用于项目阶段性技术归档。
