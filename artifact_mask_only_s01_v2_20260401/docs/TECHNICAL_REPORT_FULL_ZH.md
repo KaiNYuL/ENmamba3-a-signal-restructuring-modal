@@ -63,9 +63,9 @@ $$
 
 文件：
 
-- ../../../artifact_mask_only_s01_v2_20260401/results/ablation/no_aux_bias_filtered_r2_ge0/fusion_filtered28_clean24_metrics.csv
-- ../../../artifact_mask_only_s01_v2_20260401/results/ablation/no_aux_bias_filtered_r2_ge0/fusion_filtered28_outliers_iqr.csv
-- ../../../artifact_mask_only_s01_v2_20260401/results/ablation/no_aux_bias_filtered_r2_ge0/fusion_filtered28_clean_summary_iqr.json
+- ../results/ablation/no_aux_bias_filtered_r2_ge0/fusion_filtered28_clean24_metrics.csv
+- ../results/ablation/no_aux_bias_filtered_r2_ge0/fusion_filtered28_outliers_iqr.csv
+- ../results/ablation/no_aux_bias_filtered_r2_ge0/fusion_filtered28_clean_summary_iqr.json
 
 ## 3. Baseline 对比（Fusion 为唯一主模型）
 
@@ -73,7 +73,7 @@ $$
 
 表格：
 
-- ../../../artifact_mask_only_s01_v2_20260401/results/baselines_all/filtered_r2_ge0/all_baselines_comparison_table_fusion_primary_clean24.csv
+- ../results/baselines_all/filtered_r2_ge0/all_baselines_comparison_table_fusion_primary_clean24.csv
 
 核心均值（clean24）：
 
@@ -90,9 +90,9 @@ $$
 
 图像：
 
-![all_models_metric](../../../artifact_mask_only_s01_v2_20260401/results/baselines_all/filtered_r2_ge0/figures/all_models_metric_comparison_fusion_primary_clean24.png)
+![all_models_metric](../results/baselines_all/filtered_r2_ge0/figures/all_models_metric_comparison_fusion_primary_clean24.png)
 
-![r2_gap_vs_fusion](../../../artifact_mask_only_s01_v2_20260401/results/baselines_all/filtered_r2_ge0/figures/all_models_r2_gap_vs_fusion_primary_clean24.png)
+![r2_gap_vs_fusion](../results/baselines_all/filtered_r2_ge0/figures/all_models_r2_gap_vs_fusion_primary_clean24.png)
 
 ## 4. 消融实验（四路）
 
@@ -104,8 +104,8 @@ $$
 
 结果文件：
 
-- ../../../artifact_mask_only_s01_v2_20260401/results/ablation/no_aux_bias_filtered_r2_ge0/ablation_compare_fusion_primary_vs_mamba3_vs_mamba_vs_no_aux_bias_clean24.csv
-- ../../../artifact_mask_only_s01_v2_20260401/results/ablation/no_aux_bias_filtered_r2_ge0/ablation_compare_fusion_primary_vs_mamba3_vs_mamba_vs_no_aux_bias_clean24_summary.json
+- ../results/ablation/no_aux_bias_filtered_r2_ge0/ablation_compare_fusion_primary_vs_mamba3_vs_mamba_vs_no_aux_bias_clean24.csv
+- ../results/ablation/no_aux_bias_filtered_r2_ge0/ablation_compare_fusion_primary_vs_mamba3_vs_mamba_vs_no_aux_bias_clean24_summary.json
 
 关键均值（clean24）：
 
@@ -122,9 +122,9 @@ $$
 
 图像：
 
-![ablation_grouped](../../../artifact_mask_only_s01_v2_20260401/results/ablation/no_aux_bias_filtered_r2_ge0/figures/r2_grouped_fusion_mamba3_mamba_no_aux_bias_clean24.png)
+![ablation_grouped](../results/ablation/no_aux_bias_filtered_r2_ge0/figures/r2_grouped_fusion_mamba3_mamba_no_aux_bias_clean24.png)
 
-![ablation_delta](../../../artifact_mask_only_s01_v2_20260401/results/ablation/no_aux_bias_filtered_r2_ge0/figures/delta_r2_mamba3_mamba_no_aux_minus_fusion_clean24.png)
+![ablation_delta](../results/ablation/no_aux_bias_filtered_r2_ge0/figures/delta_r2_mamba3_mamba_no_aux_minus_fusion_clean24.png)
 
 消融结论：
 
@@ -136,9 +136,9 @@ $$
 
 文件：
 
-- ../../../artifact_mask_only_s01_v2_20260401/results/summary/channel_test_fusion_primary_clean24/fusion_primary_clean24_per_channel_test_mse.csv
-- ../../../artifact_mask_only_s01_v2_20260401/results/summary/channel_test_fusion_primary_clean24/fusion_primary_clean24_per_channel_test_summary.csv
-- ../../../artifact_mask_only_s01_v2_20260401/results/summary/channel_test_fusion_primary_clean24/fusion_primary_clean24_channel_mapping.json
+- ../results/summary/channel_test_fusion_primary_clean24/fusion_primary_clean24_per_channel_test_mse.csv
+- ../results/summary/channel_test_fusion_primary_clean24/fusion_primary_clean24_per_channel_test_summary.csv
+- ../results/summary/channel_test_fusion_primary_clean24/fusion_primary_clean24_channel_mapping.json
 
 关键统计：
 
@@ -147,9 +147,9 @@ $$
 
 图像：
 
-![channel_bar](../../../artifact_mask_only_s01_v2_20260401/results/summary/channel_test_fusion_primary_clean24/figures/fusion_primary_clean24_channel_test_mse_mean_std.png)
+![channel_bar](../results/summary/channel_test_fusion_primary_clean24/figures/fusion_primary_clean24_channel_test_mse_mean_std.png)
 
-![channel_heatmap](../../../artifact_mask_only_s01_v2_20260401/results/summary/channel_test_fusion_primary_clean24/figures/fusion_primary_clean24_channel_test_mse_subject_heatmap.png)
+![channel_heatmap](../results/summary/channel_test_fusion_primary_clean24/figures/fusion_primary_clean24_channel_test_mse_subject_heatmap.png)
 
 ## 6. 最终结论
 
@@ -158,4 +158,5 @@ $$
 
 ## 7. 资产索引
 
-- ../../../artifact_mask_only_s01_v2_20260401/results/summary/fusion_primary_clean24_report_assets.json
+- ../results/summary/fusion_primary_clean24_report_assets.json
+
