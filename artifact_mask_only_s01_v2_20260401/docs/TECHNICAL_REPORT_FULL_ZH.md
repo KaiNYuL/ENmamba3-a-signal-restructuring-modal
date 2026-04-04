@@ -77,7 +77,7 @@ $$
 通过线性层 + SiLU 变换为条件偏置：
 
 $$
-b_{aux} = \operatorname{SiLU}(W_{aux} y_{aux}) \in \mathbb{R}^{B \times d_{model}}
+b_{aux} = \mathrm{SiLU}(W_{aux} y_{aux}) \in \mathbb{R}^{B \times d_{model}}
 $$
 
 再广播到 token 维后加到输入表征：
@@ -93,7 +93,7 @@ $$
 融合后的 token 经过线性头：
 
 $$
-\operatorname{Linear}(2d_{model} \rightarrow C \cdot P)
+\mathrm{Linear}(2d_{model} \rightarrow C \cdot P)
 $$
 
 将每个 token 还原为长度为 $P$ 的多通道片段，再按时间折叠回原序列长度，得到：
